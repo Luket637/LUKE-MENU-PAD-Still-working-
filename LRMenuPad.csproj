@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <AssemblyName>LRMenuPad</AssemblyName>
+    <RootNamespace>LRMenuPad</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Set these HintPaths to your local Gorilla Tag/BepInEx assemblies -->
+    <Reference Include="BepInEx">
+      <HintPath>Libs\BepInEx.dll</HintPath>
+    </Reference>
+
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>Libs\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Libs\UnityEngine.UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <PropertyGroup>
+    <OutputPath>Build\</OutputPath>
+  </PropertyGroup>
+
+</Project>

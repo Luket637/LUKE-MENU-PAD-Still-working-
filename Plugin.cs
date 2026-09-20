@@ -10,29 +10,29 @@ namespace LRMenuPad
     )]
     public class Plugin : BaseUnityPlugin
     {
-        private GameObject menuObject;
-        private bool menuOpen;
+        private Menu menu;
 
         private void Awake()
         {
+            Logger.LogInfo("LR MENU PAD — UNR 1 loading...");
+
+            GameObject menuObject = new GameObject("LR_MENU_PAD");
+            DontDestroyOnLoad(menuObject);
+
+            menu = menuObject.AddComponent<Menu>();
+            menu.Create();
+
             Logger.LogInfo("LR MENU PAD — UNR 1 loaded.");
         }
 
         private void Update()
         {
-            // Y = Open / Close
+            // Temporary keyboard test:
+            // Press Y to open/close the menu.
             if (Input.GetKeyDown(KeyCode.Y))
             {
-                ToggleMenu();
+                menu.Toggle();
             }
-        }
-
-        private void ToggleMenu()
-        {
-            menuOpen = !menuOpen;
-
-            if (menuObject != null)
-                menuObject.SetActive(menuOpen);
         }
     }
 }
